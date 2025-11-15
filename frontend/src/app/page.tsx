@@ -1,19 +1,27 @@
-"use client";
-import React, { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { createClient } from "@/lib/supabase/server";
 
+export default async function HomePage() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
-
-
-export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-white">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            ClubHub: UMD
-          </h1>
-        </div>
-      </main>
-    </div>
+    <main style={{ padding: "2rem" }}>
+      <h1>Home</h1>
+
+      {!user ? (
+        <>
+          <p>You are not logged in.</p>
+          <Link href="/login">Go to login</Link>
+        </>
+      ) : (
+        <>
+          <p>Logged in as: {user.email}</p>
+          <Link href="/dashboard">Go to dashboard</Link>
+        </>
+      )}
+    </main>
   );
 }
