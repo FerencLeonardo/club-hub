@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+import { getCurrentUserWithType } from "@/lib/auth/currentUser";
+import { getUserDisplayName } from "@/lib/auth/currentUser";
 
 export default async function HomePage() {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const { user, userType } = await getCurrentUserWithType();
+  const displayName = await getUserDisplayName();
 
   return (
     <div className="space-y-6">
@@ -30,7 +29,7 @@ export default async function HomePage() {
             <p className="text-slate-300 mb-4">
               Logged in as{" "}
               <span className="font-semibold text-emerald-300">
-                {user.email}
+                {displayName || user.email}
               </span>
             </p>
           </>
