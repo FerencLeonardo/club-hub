@@ -1,0 +1,13 @@
+__turbopack_load_page_chunks__("/_app", [
+  "static/chunks/cf9af_next_dist_compiled_83cb7011._.js",
+  "static/chunks/cf9af_next_dist_shared_lib_d828322f._.js",
+  "static/chunks/cf9af_next_dist_client_f7f55163._.js",
+  "static/chunks/cf9af_next_dist_d3947c41._.js",
+  "static/chunks/cf9af_next_app_92952cd6.js",
+  "static/chunks/[next]_entry_page-loader_ts_42d75ff6._.js",
+  "static/chunks/cf9af_react-dom_27f1c38b._.js",
+  "static/chunks/cf9af_08775e2a._.js",
+  "static/chunks/[root-of-the-server]__2de39a64._.js",
+  "static/chunks/club-hub_frontend_pages__app_2da965e7._.js",
+  "static/chunks/turbopack-club-hub_frontend_pages__app_5d057d9a._.js"
+])

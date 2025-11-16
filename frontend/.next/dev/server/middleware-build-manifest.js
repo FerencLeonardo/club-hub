@@ -1,23 +1,48 @@
 globalThis.__BUILD_MANIFEST = {
   "pages": {
-    "/_app": []
+    "/_app": [
+      "static/chunks/cf9af_next_dist_compiled_83cb7011._.js",
+      "static/chunks/cf9af_next_dist_shared_lib_d828322f._.js",
+      "static/chunks/cf9af_next_dist_client_f7f55163._.js",
+      "static/chunks/cf9af_next_dist_d3947c41._.js",
+      "static/chunks/cf9af_next_app_92952cd6.js",
+      "static/chunks/[next]_entry_page-loader_ts_42d75ff6._.js",
+      "static/chunks/cf9af_react-dom_27f1c38b._.js",
+      "static/chunks/cf9af_08775e2a._.js",
+      "static/chunks/[root-of-the-server]__2de39a64._.js",
+      "static/chunks/club-hub_frontend_pages__app_2da965e7._.js",
+      "static/chunks/turbopack-club-hub_frontend_pages__app_5d057d9a._.js"
+    ],
+    "/_error": [
+      "static/chunks/cf9af_next_dist_compiled_83cb7011._.js",
+      "static/chunks/cf9af_next_dist_shared_lib_2a3e2dac._.js",
+      "static/chunks/cf9af_next_dist_client_f7f55163._.js",
+      "static/chunks/cf9af_next_dist_6e9dfbd6._.js",
+      "static/chunks/cf9af_next_error_cf6860be.js",
+      "static/chunks/[next]_entry_page-loader_ts_f40f96ca._.js",
+      "static/chunks/cf9af_react-dom_27f1c38b._.js",
+      "static/chunks/cf9af_08775e2a._.js",
+      "static/chunks/[root-of-the-server]__e4c3651d._.js",
+      "static/chunks/club-hub_frontend_pages__error_2da965e7._.js",
+      "static/chunks/turbopack-club-hub_frontend_pages__error_dcfd20ff._.js"
+    ]
   },
   "devFiles": [],
   "polyfillFiles": [
-    "static/chunks/node_modules_next_dist_build_polyfills_polyfill-nomodule.js"
+    "static/chunks/cf9af_next_dist_build_polyfills_polyfill-nomodule.js"
   ],
   "lowPriorityFiles": [],
   "rootMainFiles": [
-    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_bae88007._.js",
-    "static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
-    "static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_9212ccad._.js",
-    "static/chunks/node_modules_next_dist_compiled_next-devtools_index_1dd7fb59.js",
-    "static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js",
-    "static/chunks/node_modules_next_dist_client_aaee43fe._.js",
-    "static/chunks/node_modules_next_dist_7a8122d0._.js",
-    "static/chunks/node_modules_@swc_helpers_cjs_d80fb378._.js",
-    "static/chunks/_a0ff3932._.js",
-    "static/chunks/turbopack-_45210fd5._.js"
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_45da539d._.js",
+    "static/chunks/cf9af_next_dist_compiled_react-dom_87cfbba6._.js",
+    "static/chunks/cf9af_next_dist_compiled_react-server-dom-turbopack_ea0583e7._.js",
+    "static/chunks/cf9af_next_dist_compiled_next-devtools_index_c169c968.js",
+    "static/chunks/cf9af_next_dist_compiled_89ca999b._.js",
+    "static/chunks/cf9af_next_dist_client_25e343be._.js",
+    "static/chunks/cf9af_next_dist_dcd89410._.js",
+    "static/chunks/cf9af_@swc_helpers_cjs_f46288b7._.js",
+    "static/chunks/club-hub_frontend_a0ff3932._.js",
+    "static/chunks/turbopack-club-hub_frontend_d9b80044._.js"
   ]
 };
 globalThis.__BUILD_MANIFEST.lowPriorityFiles = [
