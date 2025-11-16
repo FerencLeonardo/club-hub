@@ -36,6 +36,17 @@ export default async function HomePage() {
           </>
         )}
       </section>
+      <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 shadow-lg shadow-slate-950/40">
+      <h2 className="text-xl font-semibold tracking-tight mb-4 text-slate-100">
+        Posts
+      </h2>
+      <div className="space-y-4">
+        <p className="text-slate-300 mb-4">
+        This is a placeholder for posts content.
+      </p>
+      </div>
+
+      </section>
     </div>
   );
 }
