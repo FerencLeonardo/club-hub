@@ -4,8 +4,10 @@ import { FormEvent, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 
+
 export default function LoginPage() {
   const supabase = createClient();
+
 
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
@@ -13,10 +15,12 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setLoading(true);
     setErrorMsg(null);
+
 
     try {
       if (mode === "signup") {
@@ -38,8 +42,12 @@ export default function LoginPage() {
     }
   }
 
+
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex flex-col items-center justify-center gap-8">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-emerald-400 mb-2">Welcome to ClubHub</h1>
+      </div>
       <div className="w-full max-w-md rounded-2xl border border-slate-800 bg-slate-900/70 p-6 shadow-xl shadow-slate-950/40">
         <h1 className="text-2xl font-semibold tracking-tight mb-1">
           {mode === "signin" ? "Sign in" : "Create an account"}
@@ -49,6 +57,7 @@ export default function LoginPage() {
             ? "Welcome back. Sign in with your email and password."
             : "Sign up to start using the app."}
         </p>
+
 
         <div className="flex gap-2 mb-6">
           <button
@@ -75,6 +84,7 @@ export default function LoginPage() {
           </button>
         </div>
 
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-1">
             <label className="text-sm font-medium text-slate-200">
@@ -90,6 +100,7 @@ export default function LoginPage() {
             />
           </div>
 
+
           <div className="space-y-1">
             <label className="text-sm font-medium text-slate-200">
               Password
@@ -104,11 +115,13 @@ export default function LoginPage() {
             />
           </div>
 
+
           {errorMsg && (
             <p className="text-sm text-red-400 bg-red-950/40 border border-red-900 rounded-lg px-3 py-2">
               {errorMsg}
             </p>
           )}
+
 
           <button
             type="submit"
@@ -122,6 +135,7 @@ export default function LoginPage() {
               : "Create account"}
           </button>
         </form>
+
 
         <p className="mt-4 text-xs text-slate-500">
           <Link

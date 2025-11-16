@@ -12,11 +12,13 @@ export async function createClient() {
         get(name: string) {
           return cookieStore.get(name)?.value;
         },
-        set(name: string, value: string, options: any) {
-          cookieStore.set({ name, value, ...options });
+        // In Server Components we CANNOT modify cookies,
+        // so these are no-ops to avoid the runtime error.
+        set() {
+          // no-op
         },
-        remove(name: string, options: any) {
-          cookieStore.set({ name, value: "", ...options });
+        remove() {
+          // no-op
         },
       },
     }
