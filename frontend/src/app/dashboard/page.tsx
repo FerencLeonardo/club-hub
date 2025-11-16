@@ -1,13 +1,15 @@
 import { redirect } from "next/navigation";
 import LogoutButton from "@/components/auth/LogoutButton";
-import { getCurrentUserWithType } from "@/lib/auth/currentUser";
+import { getCurrentUserWithProfile } from "@/lib/auth/currentUser";
 
 export default async function DashboardPage() {
-  const { user, userType } = await getCurrentUserWithType();
+  const { user, profile } = await getCurrentUserWithProfile();
 
   if (!user) {
     redirect("/login");
   }
+
+  const userType = profile?.user_type;
 
   if (userType === "org") {
     // ORG DASHBOARD

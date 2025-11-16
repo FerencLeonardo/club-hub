@@ -1,34 +1,34 @@
 import { createClient } from "@/lib/supabase/server";
 
-export async function getCurrentUserWithType() {
+export async function getCurrentUserWithProfile() {
   const supabase = await createClient();
 
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const userType = user?.user_metadata?.user_type as
-    | "student"
-    | "org"
-    | undefined;
+  if (!user) return { user: null, profile: null };
 
-  return { user, userType };
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("user_type, first_name, last_name, org_name")
+    .eq("id", user.id)
+    .single();
+
+  return { user, profile };
 }
 
 export async function getUserDisplayName() {
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+  const { user, profile } = await getCurrentUserWithProfile();
   
   if (!user) return null;
   
-  const userType = user.user_metadata?.user_type;
-  
-  if (userType === "student") {
-    const firstName = user.user_metadata?.first_name || "";
-    const lastName = user.user_metadata?.last_name || "";
+  if (profile?.user_type === "student") {
+    const firstName = profile.first_name || "";
+    const lastName = profile.last_name || "";
     return `${firstName} ${lastName}`.trim();
-  } else if (userType === "org") {
-    return user.user_metadata?.org_name || "";
+  } else if (profile?.user_type === "org") {
+    return profile?.org_name || "";
   }
   
   return null;

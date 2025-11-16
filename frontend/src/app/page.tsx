@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { getCurrentUserWithType } from "@/lib/auth/currentUser";
-import { getUserDisplayName } from "@/lib/auth/currentUser";
+import { getCurrentUserWithProfile, getUserDisplayName } from "@/lib/auth/currentUser";
 
 export default async function HomePage() {
-  const { user, userType } = await getCurrentUserWithType();
+  const { user, profile } = await getCurrentUserWithProfile();
   const displayName = await getUserDisplayName();
 
   return (
