@@ -39,7 +39,10 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex flex-col items-center justify-center gap-8">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-emerald-400 mb-2">Welcome to ClubHub</h1>
+      </div>
       <div className="w-full max-w-md rounded-2xl border border-slate-800 bg-slate-900/70 p-6 shadow-xl shadow-slate-950/40">
         <h1 className="text-2xl font-semibold tracking-tight mb-1">
           {mode === "signin" ? "Sign in" : "Create an account"}
