@@ -78,7 +78,11 @@ export default async function HomePage() {
                 </p>
                 <p className="text-[11px] text-slate-500">
                   Posted on{" "}
-                  {new Date(post.created_at).toLocaleString()}
+                  {new Date(post.created_at).toLocaleString("en-US", {
+                    timeZone: "America/New_York",
+                    dateStyle: "medium",
+                    timeStyle: "short",
+                  })}
                 </p>
               </article>
             ))}

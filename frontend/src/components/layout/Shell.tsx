@@ -89,7 +89,7 @@ export default function Shell({ children }: { children: ReactNode }) {
 
       {/* FOOTER */}
       <footer className="w-full border-t border-slate-800 bg-slate-900/80">
-        <div className="mx-auto max-w-4xl px-4 py-3 text-xs text-slate-500">
+        <div className="mx-auto max-w-4xl px-4 py-3 text-xs text-slate-500 text-center">
           © {new Date().getFullYear()} ClubHub
         </div>
       </footer>
